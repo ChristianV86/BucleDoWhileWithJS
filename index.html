@@ -70,16 +70,16 @@
                 </script>
 
                 <div id="contenedor">
-                    <p>Nombre: <script>document.write(nombre)</script></p>
-                    <p>Edad: <script>document.write(edad)</script></p>
-                    <p>Ciudad: <script>document.write(ciudad)</script></p>
+                    <p>Nombre: <script>document.write(nombre.toUpperCase());</script></p>
+                    <p>Edad: <script>document.write(edad.toUpperCase());</script></p>
+                    <p>Ciudad: <script>document.write(ciudad.toUpperCase());</script></p>
                 </div>
 
             </article>
 
             <article>
 
-                <h3>Ejercicio 2 - Número aleatorio</h3>
+                <h3>Ejercicio 2 - Juego Adivina el número aleatorio</h3> <br>
 
                 <script>
                     /***** Math.random();***** 
@@ -88,7 +88,40 @@
                     /*El método random, devuelve números aleatorios entre 0 y 1. Para lograr que el método muestre números entre un número determinado, multiplicamos ese valor entre el cual queremos que muestre los números. Por ejemplo necesitamos que se muestren números aleatorios entre 0 y 100, multiplicamos el método por 100, quedaría así en el código: var aleatorio=Math.random()*100;. Como este método devuleve valores númericos con decimales y en el ejercicio que estamos haciendo es para adivinar el número aleatorio que nos dio el programa, necesitamos redondear el número que nos dio, para esto utilizamos otro método del objeto Math, el método round();*/
                     var aleatorio=Math.round(Math.random()*100);
 
-                    
+                    // Esta variable guarda el número que ingresó el usuario
+                    var numIngresado;
+                    /*Esta variable guarda la cantidad de intentos que se han ingresado para adivinar el número aleatorio que me dio el programa. Tendrá un límite de intentos*/
+                    var intentos;
+
+                    numIngresado=0;
+                    intentos=0;
+
+                    alert("Adivina un número aleatorio entre 0 y 100")
+
+                    do{
+                        // Pedimos el número al usuario
+                        numIngresado=prompt("Ingresa el número", "Escribe el número");
+
+                        if(aleatorio > numIngresado){
+                            alert("Pista: El número es más alto, intenta de nuevo");
+                        }
+                        if(aleatorio < numIngresado){
+                            alert("Pista: El número es más bajo, intenta de nuevo");
+                        }
+                        if(numIngresado <0 || numIngresado >= 100) {
+                            alert("Ingresaste un valor no contemplado");
+                        }
+                        // almacenamos el número de intentos
+                        intentos ++;
+
+                    // Esta linea dice que mientras el número que se ingresa es diferente del aleatorio se ejecute el ciclo o bucle do    
+                    }while(aleatorio != numIngresado);
+                        
+                        alert("¡Felicitaciones! " + nombre +" has adivinado el número misterioso");
+                        
+                        document.write("<p>El número aleatorio fue: " + aleatorio + "</p>");
+                        document.write("<p>Nombre jugador: " + nombre.toUpperCase() + "</p>");
+                        document.write("<p>Número de intentos: " + intentos + "</p>");                    
 
                 </script>
 
