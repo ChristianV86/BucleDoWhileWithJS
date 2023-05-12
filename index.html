@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Bucle Do While With JS</title>
+</head>
+<body>
+
+    <div class="container">
+        <!-- BUCLE FOR, WHILE AND DO WHILE  -->
+        <h1 style="text-align: center;">BUCLES FOR,  WHILE AND DO WHILE WITH JAVASCRIPT</h1>
+
+        <section>
+
+            <article>
+                <p>
+                    Los bucles permite que se repita el codigo hasta que se cumpla la condición dada.
+                </p>
+            
+                <div id="container-img">
+                    <img src="./img/Screenshot_1.png" alt="sintaxis ciclo while">
+                </div>
+            </article>
+
+            <article>
+                <h2 style="text-align: center;">Bucle Indeterminado Do While</h2>
+
+                <h3>Sintaxis</h3>
+                <div id="container-img">
+                    <img src="./img/Screenshot_3.png" alt="sintaxis ciclo do-while">
+                </div>
+
+                <p>
+                    La diferencia con el bucle While es que cuando se ejecuta el programa y la condición es falsa, si se ejecuta al menos una vez el código que hay dentro del bucle.
+                </p>            
+            </article>
+            
+            <article>
+                <h3>Ejercicio 1 - Ingreso de datos</h3>
+
+                <script>
+                    var nombre, edad, ciudad;
+                
+                    //var nombre=prompt("Escribe tú nombre", "Tú nombre va aquí");
+
+                    do{
+
+                        nombre=prompt("Escribe tú nombre", "Tú nombre va aquí");
+
+                    }while(!isNaN(nombre));
+
+                    //var edad=prompt("Escribe tú edad", "Tú edad va aquí");
+                
+                    do{
+
+                        edad=prompt("Escribe tú edad", "Tú edad va aquí");
+
+                    } while(edad<=0 || edad>=110 || isNaN(edad));  
+
+                    //var ciudad=prompt("Escribe tú ciudad", "Tú ciudad va aquí");
+
+                    do {
+
+                        ciudad=prompt("Escribe tú ciudad", "Tú ciudad va aquí");
+
+                    } while(!isNaN(ciudad));
+                </script>
+
+                <div id="contenedor">
+                    <p>Nombre: <script>document.write(nombre)</script></p>
+                    <p>Edad: <script>document.write(edad)</script></p>
+                    <p>Ciudad: <script>document.write(ciudad)</script></p>
+                </div>
+
+            </article>
+
+            <article>
+
+                <h3>Ejercicio 2 - Número aleatorio</h3>
+
+                <script>
+                    /***** Math.random();***** 
+                     * El objeto Math, es un objeto abtracto, ya que no tiene propiedades, sólo tiene métodos. Se * *   * utiliza para hacer calculos matemáticos, pero no las operaciones básicas, sino cálculos más * * * complejos. */
+
+                    /*El método random, devuelve números aleatorios entre 0 y 1. Para lograr que el método muestre números entre un número determinado, multiplicamos ese valor entre el cual queremos que muestre los números. Por ejemplo necesitamos que se muestren números aleatorios entre 0 y 100, multiplicamos el método por 100, quedaría así en el código: var aleatorio=Math.random()*100;. Como este método devuleve valores númericos con decimales y en el ejercicio que estamos haciendo es para adivinar el número aleatorio que nos dio el programa, necesitamos redondear el número que nos dio, para esto utilizamos otro método del objeto Math, el método round();*/
+                    var aleatorio=Math.round(Math.random()*100);
+
+                    
+
+                </script>
+
+            </article>
+
+        </section>
+    </div>
+</body>
+</html>
